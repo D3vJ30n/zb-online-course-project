@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: zb-online-course-project
+  datasource:
+    url: jdbc:mysql://192.168.219.101:3306/zb_online_course?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 6188
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  # mail 설정을 spring 하위로 이동
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: jxxdxmxx2@gmail.com
+    password: hovt vstb ofja umit
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: info
+
+mybatis:
+  mapper-locations: mybatis/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
